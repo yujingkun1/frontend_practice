@@ -1,0 +1,177 @@
+/* 通用设置 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #005b96;
+    /* 深蓝色背景 */
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:focus,
+nav ul li a:hover {
+    background-color: #03396c;
+    /* 提高对比度的深色 */
+    outline: 2px solid #ffdd57;
+    /* 焦点样式（黄色轮廓） */
+    outline-offset: 2px;
+}
+
+h1,
+h2 {
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+main {
+    padding: 20px;
+}
+
+.featured {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #005b96;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* 进度条样式 */
+.progress {
+    margin-bottom: 20px;
+}
+
+.progress h3 {
+    margin: 0 0 5px;
+}
+
+.bar {
+    background-color: #4caf50;
+    /* 高对比度的绿色 */
+    height: 20px;
+    border-radius: 5px;
+    width: 0;
+    transition: width 0.5s;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #03396c;
+    color: #fff;
+}
+
+/* 表单样式 */
+form {
+    margin: 20px 0;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #005b96;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover,
+form input[type="submit"]:focus {
+    background-color: #03396c;
+    outline: 2px solid #ffdd57;
+    /* 焦点样式 */
+    outline-offset: 2px;
+}
+
+/* 媒体查询：使网站对移动设备友好 */
+@media (max-width: 768px) {
+    .featured {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
