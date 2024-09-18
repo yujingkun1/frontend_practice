@@ -8,9 +8,8 @@ body {
 }
 
 header {
-    background-color: #005b96;
-    /* 深蓝色背景 */
-    color: #fff;
+    background-color: #ffffff;
+    color: #005b96;
     padding: 1em;
     text-align: center;
 }
@@ -26,28 +25,37 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #005b96;
+    /* 深蓝色链接 */
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 nav ul li a:focus,
 nav ul li a:hover {
     background-color: #03396c;
-    /* 提高对比度的深色 */
+    /* 深色背景在悬停时 */
+    color: #ffffff;
+    /* 白色文字 */
     outline: 2px solid #ffdd57;
-    /* 焦点样式（黄色轮廓） */
+    /* 黄色焦点状态 */
     outline-offset: 2px;
 }
 
-h1,
-h2 {
-    color: #333;
+h1 {
+    color: #005b96;
+    /* 深蓝色标题 */
+    font-size: 2.5em;
+    margin: 0;
 }
 
-h1 {
-    font-size: 2.5em;
+h2 {
+    color: #333;
+    /* 深色副标题 */
+    font-size: 1.8em;
+    margin-top: 20px;
 }
 
 main {
@@ -174,4 +182,23 @@ form input[type="submit"]:focus {
     .card {
         width: 100%;
     }
+}
+/* 底部样式 */
+footer {
+    background-color: #005b96;
+    /* 深蓝色背景 */
+    color: #fff;
+    /* 白色文字 */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    /* 固定定位 */
+    bottom: 0;
+    /* 距离页面底部0像素 */
+    width: 100%;
+    /* 跨越整个页面宽度 */
+    left: 0;
+    /* 从页面左侧开始 */
+    z-index: 1000;
+    /* 确保在其他内容上层 */
 }
