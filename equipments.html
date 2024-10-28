@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography World - Equipments</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <!-- navigation -->
+        <nav class="navbar">
+            <div class="logo">Photography World</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="learning.html">Learning</a></li>
+        
+                <!-- Equipments Dropdown -->
+                <li class="dropdown">
+                    <a href="equipments.html">Equipments</a>
+                    <ul class="dropdown-content">
+                        <li><a href="equipments.html">Cameras</a></li>
+                        <li><a href="equipments-lenses.html">Lenses</a></li>
+                        <li><a href="equipments-accessories.html">Accessories</a></li>
+                    </ul>
+                </li>
+        
+                <!-- Gallery Dropdown -->
+                <li class="dropdown">
+                    <a href="Gallery.html">Gallery</a>
+                    <ul class="dropdown-content">
+                        <li><a href="Gallery.html">People</a></li>
+                        <li><a href="environment.html">Environment</a></li>
+                        <li><a href="other.html">Other</a></li>
+                    </ul>
+                </li>
+        
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        
+            <!-- Login Button -->
+            <a href="login.html" class="cta">
+                <button class="login_button" aria-label="login button">
+                    <span>Login</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" height="34" width="34">
+                        <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                        <path fill="black"
+                            d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
+                        </path>
+                    </svg>
+                </button>
+            </a>
+        </nav>
+    </header>
+
+    <!-- new products recommendation -->
+    <section class="carousel">
+        <input type="radio" name="carousel" id="slide1" checked>
+        <input type="radio" name="carousel" id="slide2">
+        <input type="radio" name="carousel" id="slide3">
+        <input type="radio" name="carousel" id="slide4">
+    
+
+        <div class="carousel-images">
+            <div class="slide" id="s1">
+                <img src="photo\other_photo\equipments\HASSELBLAD-907X.png" alt="HASSELBLAD-907X.png">
+            </div>
+            <div class="slide" id="s2">
+                <img src="photo\other_photo\equipments\HASSELBLAD-X2D.png" alt="HASSELBLAD-X2D.png">
+            </div>
+            <div class="slide" id="s3">
+                <img src="photo\other_photo\equipments\HASSELBLAD-XCD.png" alt="HASSELBLAD-XCD.png">
+            </div>
+            <div class="slide" id="s4">
+                <img src="photo\other_photo\equipments\HASSELELAB-X2D.100C.png" alt="HASSELELAB-X2D.100C.png">
+            </div>
+        </div>
+    
+        <div class="carousel-dots">
+            <label for="slide1" class="dot active"></label>
+            <label for="slide2" class="dot"></label>
+            <label for="slide3" class="dot"></label>
+            <label for="slide4" class="dot"></label>
+        </div>
+    </section>
+
+    <!-- personal-recommendation -->
+    <div class="personal-recommendation">
+        <a href="contact.html"><img src="photo\other_photo\equipments\equipment-recommendation.png" alt="personality recommendation"></a>
+    </div>
+    
+    <!-- product-recommendation -->
+    <div class="page-container">
+        <h1>Product Recommendations</h1> 
+        <div class="product-nav">
+            <ul class="product-nav-links">
+                <li class="product-nav-item active"><a href="equipments.html">Cameras</a></li>
+                <li class="product-nav-item"><a href="equipments-lenses.html">Lenses</a></li>
+                <li class="product-nav-item"><a href="equipments-accessories.html">Accessories</a></li>
+            </ul>
+        </div>
+        
+        <!-- Entry-Level Products -->
+        <div class="product-section">
+            <h2 class="section-title">Entry-Level Products</h2>
+            <div class="product-row">
+                <div class="product-item">
+                    <img src="photo/other_photo/equipments/CanonR100.png" alt="CanonR100">
+                    <div class="product-info">
+                        <p class="product-name">Canon R100</p>
+                        <p class="product-price">$519.00</p>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="photo\other_photo\equipments\NikonZ30.png" alt="NikonZ30">
+                    <div class="product-info">
+                        <p class="product-name">Nikon Z30</p>
+                        <p class="product-price">$655.00</p>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="photo\other_photo\equipments\SonyA6300.png" alt="SonyA6300">
+                    <div class="product-info">
+                        <p class="product-name">Sony A6300</p>
+                        <p class="product-price">$421.00</p>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="photo\other_photo\equipments\FujiXT30.png" alt="FujiXT30">
+                    <div class="product-info">
+                        <p class="product-name">Fujifilm XT30</p>
+                        <p class="product-price">$1023.00</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flagship Products -->
+            <h2 class="section-title flagship-title">Flagship Products</h2>
+            <div class="product-row">
+                <div class="product-item">
+                    <img src="photo\other_photo\equipments\CanonR5.png" alt="CanonR5">
+                    <div class="product-info">
+                        <p class="product-name">Canon R5</p>
+                        <p class="product-price">$3369.00</p>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="photo\other_photo\equipments\LEICA-SL3.png" alt="LEICA-SL3">
+                    <div class="product-info">
+                        <p class="product-name">LEICA SL3</p>
+                        <p class="product-price">$6379.00</p>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="photo\other_photo\equipments\SonyA93.png" alt="Sony A93">
+                    <div class="product-info">
+                        <p class="product-name">Sony A93</p>
+                        <p class="product-price">$6317.00</p>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="photo\other_photo\equipments\NikonZ9.png" alt="Nikon Z9">
+                    <div class="product-info">
+                        <p class="product-name">Nikon Z9</p>
+                        <p class="product-price">$4589.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Photography World. All Rights Reserved.</p>
+            <p><a href="contact.html">Jingkun Yu</a> | <a href="contact.html">Contact us</a></p>
+        </div>
+    </footer>
+</body>
+
+</html>
