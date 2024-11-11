@@ -4,41 +4,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Learning Resources</title>
+    <title>Photography World - Capture the Moment</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="frontend-tools.html">Frontend Tools</a></li>
-                <li><a href="css-tips.html">CSS Tips</a></li>
-                <li><a href="html-basics.html">HTML Basics</a></li>
-                <li><a href="resources_recommendation.html">Resources recommendation</a></li>
+    <header class="hero-header">
+
+        <!-- navigation -->
+        <nav class="navbar">
+            <div class="logo">Photography World</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="learning.html">Learning</a></li>
+        
+                <!-- Equipments Dropdown -->
+                <li class="dropdown">
+                    <a href="equipments.html">Equipments</a>
+                    <ul class="dropdown-content">
+                        <li><a href="equipments.html">Cameras</a></li>
+                        <li><a href="equipments-lenses.html">Lenses</a></li>
+                        <li><a href="equipments-accessories.html">Accessories</a></li>
+                    </ul>
+                </li>
+        
+                <!-- Gallery Dropdown -->
+                <li class="dropdown">
+                    <a href="Gallery.html">Gallery</a>
+                    <ul class="dropdown-content">
+                        <li><a href="Gallery.html">People</a></li>
+                        <li><a href="environment.html">Environment</a></li>
+                        <li><a href="other.html">Other</a></li>
+                    </ul>
+                </li>
+        
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
+        
+            <!-- Login Button -->
+            <a href="login.html" class="cta">
+                <button class="login_button" aria-label="login button">
+                    <span>Login</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" height="34" width="34">
+                        <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
+                        <path fill="black"
+                            d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
+                        </path>
+                    </svg>
+                </button>
+            </a>
         </nav>
-        <h1>Welcome to Learning Resources</h1>
-        <p>Your go-to place for the best learning tools and tips!</p>
+
+        
+        <!-- hero-content -->
+        <div class="hero-content">
+            <img src="photo\other_photo\herobackground.png" alt="Hero Image background">
+            <div class="text-overlay">
+                <h1>Capture Life's Moments</h1>
+                <p>Your journey into the world of photography starts here. Learn, explore, and get inspired!</p>
+                <a href="learning.html" class="start-button">
+                    <button class="cssbuttons-io-button" aria-label="start_button">
+                    Get started
+                    <div class="icon">
+                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                </button>
+            </a>
+            </div>  
+        </div>
     </header>
-    <main>
-        <section class="featured">
-            <h2>Featured Resources</h2>
-            <div class="card">
-                <img src="tool1.jpg" alt="Frontend Tool 1">
-                <h3>Tool 1</h3>
-                <p>Overview of Tool 1</p>
+
+
+    <!-- Daily-photography -->
+    <section class="Daily-photography">
+        <h2>Daily photography</h2>
+        <div class="image-container">
+            <div class="box">
+                <img src="photo\other_photo\photo1.png" alt="Daily photograph stone">
+                <div class="overlay">
+                    <p>Photo by: Wolfgang Weiser</p>
+                    
+                </div>
             </div>
-            <div class="card">
-                <img src="tool2.jpg" alt="Frontend Tool 2">
-                <h3>Tool 2</h3>
-                <p>Overview of Tool 2</p>
+            <div class="box">
+                <img src="photo\other_photo\photo2.png" alt="Daily photograph mountain">
+                <div class="overlay">
+                    <p>Photo by: Keivec Alecs</p>
+
+                </div>
             </div>
-        </section>
-    </main>
+            <div class="box">
+                <img src="photo\other_photo\photo3.png" alt="Daily photograph cloud">
+                <div class="overlay">
+                    <p>Photo by: Tayyab Khan</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <!-- what we offer -->
+    <section class="what-we-offer">
+        <h2>What We Offer</h2>
+        <div class="offer-container">
+            <a href="learning.html" class="offer-item first">
+                Learning Resources
+                <div class="description">Access articles about aperture, ISO, and shutter speed.</div>
+            </a>
+            <a href="equipments.html" class="offer-item second">
+                Equipment Recommendation
+                <div class="description">Explore top camera brands and accessories.</div>
+            </a>
+            <a href="gallery.html" class="offer-item third">
+                Excellent Photography
+                <div class="description">Discover iconic photographs across various genres.</div>
+            </a>
+            <a href="contact.html" class="offer-item forth">
+                Personality Tutorial
+                <div class="description">Get personalized guidance to improve your photography skills.</div>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- news section -->
+    <section class="news-section">
+        <h2>News</h2>
+        <div class="news-container">
+
+            <!-- Photography news -->
+            <div class="news-column">
+                <h4>Photography News</h4>
+                <div class="news-item">
+                    <a href="https://qicai.fengniao.com/537/5377934.html"><span>Nikon new action: mysterious new N2323 attack.</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://sai.fengniao.com/537/5377663.html"><span>The Good Life in the lens photography contest opens.</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://qicai.fengniao.com/537/5377710.html"><span>Will the Canon EOS R6 Mark III be released in the first quarter of next year?</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://qicai.fengniao.com/537/5377711.html"><span>Fujifilm is developing new cameras with new sensors.</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://qsy.fengniao.com/537/5377857.html"><span>"One super multi-energy" annual high-end flagship vivo X200 series was officially released.</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://vision.xitek.com/news/202409/18-367921.html"><span>Wuji Review Map No. 140 | myxsara: Quiet Zhiyuan.</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/galleries/202409/29-368007.html"><span>Let "class" leave and record your camping time with the EOS R8.</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/news/202410/22-368141.html"><span>Panasonic is the third largest brand in the French mirrorless camera market.</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/attitudes/202410/21-368128.html"><span>Sigma: RF bayonet lenses have been a huge success.</span></a>
+                </div>
+            </div>
+    
+            <!-- Equipments evaluation -->
+            <div class="news-column">
+                <h4>Equipments evaluation</h4>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/reviews/202409/29-368006.html"><span>f/1.4 series second round Nikkor Z 50mm f/1.4 review.</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/reviews/202410/09-368047.html"><span>Second generation full evolution SONY FE 85mm F1.4GM II review</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/reviews/202409/20-367946.html"><span>Sports photography "expert" - DJI OSMO ACTION 5 PRO trial</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/reviews/202408/07-367618.html"><span>Large aperture new selection Nikkor Z 35mm f/1.4 review</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/reviews/202406/13-367209.html"><span>Play colorful LUT Panasonic LUMIX S9 review</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/reviews/202404/16-366710.html"><span>Ultra lightweight "Horizon Mirror" Panasonic LUMIX S 28-200mm F4-7.1 MACRO O.I.S. evaluate</span></a>
+                </div>
+                <div class="news-item">
+                    <a href="https://info.xitek.com/reviews/202404/03-366685.html"><span>Super "Horizon Mirror" Nikkor Z 28-400mm f/4-8 VR review</span></a>
+                </div>
+            </div>
+            <!-- image-news -->
+            <div class="news-column">
+                <a href="https://info.xitek.com/favorites/202410/12-368073.html" class="image-box">
+                    <img src="photo\other_photo\news1.png" alt="Time lapse photography from early to late shooting day to night with Canon EOS R5 Mark II">
+                    <p>Time lapse photography from early to late shooting day to night with Canon EOS R5 Mark II</p>
+                </a>
+                <a href="https://info.xitek.com/favorites/202410/14-368088.html" class="image-box">
+                    <img src="photo\other_photo\news2.png" alt="The street camera is here! Nikon Z6Ⅲ and NIKKOR Z 35mm f/1.4 help you become a street artist in seconds">
+                    <p>The street camera is here! Nikon Z6Ⅲ and NIKKOR Z 35mm f/1.4 help you become a street artist in seconds</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- horizontal photo section -->
+        <div class="horizontal-photo-section">
+            <a href="https://info.xitek.com/reviews/202410/09-368047.html" class="horizontal-photo">
+                <div class="photo-info">
+                    <hr>
+                    <span>| evaluation | 2024.10.09</span>
+                </div>
+                <img src="photo/other_photo/horizontal1.png"
+                    alt="Second generation full evolution SONY FE 85mm F1.4GM II review">
+                <p>Second generation full evolution SONY FE 85mm F1.4GM II review</p>
+            </a>
+        
+            <a href="https://info.xitek.com/reviews/202410/01-368006.html" class="horizontal-photo">
+                <div class="photo-info">
+                    <hr>
+                    <span>| evaluation | 2024.10.01</span>
+                </div>
+                <img src="photo/other_photo/horizontal2.png" alt="f/1.4 series second round Nikkor Z 50mm f/1.4 review">
+                <p>f/1.4 series second round Nikkor Z 50mm f/1.4 review</p>
+            </a>
+        
+            <a href="https://info.xitek.com/reviews/202409/20-367946.html" class="horizontal-photo">
+                <div class="photo-info">
+                    <hr>
+                    <span>| evaluation | 2024.09.20</span>
+                </div>
+                <img src="photo/other_photo/horizontal3.png" alt="Sports photography expert - DJI OSMO ACTION 5 PRO trial">
+                <p>Sports photography "expert" - DJI OSMO ACTION 5 PRO trial</p>
+            </a>
+        
+            <a href="https://info.xitek.com/reviews/202408/07-367618.html" class="horizontal-photo">
+                <div class="photo-info">
+                    <hr>
+                    <span>| evaluation | 2024.08.07</span>
+                </div>
+                <img src="photo/other_photo/horizontal4.png" alt="Large aperture new selection Nikkor Z 35mm f/1.4 review">
+                <p>Large aperture new selection Nikkor Z 35mm f/1.4 review</p>
+            </a>
+        </div>
+        <!-- large photo section--> 
+        <div class="horizontal-photo-section">
+            <a href="https://vision.xitek.com/sight/202403/04-366467.html" class="horizontal-photo">
+                <div class="photo-info">
+                    <hr />
+                    <span>| Review | 2024/03/04</span>
+                </div>
+                <img src="photo\other_photo\largephoto1.png" alt="'Wuji comment Map' kimchi 'just play' works">
+                <p>Just Play | Photography</p>
+            </a>
+        
+            <a href="https://vision.xitek.com/sight/202402/08-361688.html" class="horizontal-photo">
+                <div class="photo-info">
+                    <hr />
+                    <span>| Review | 2024/02/08</span>
+                </div>
+                <img src="photo\other_photo\largephoto2.png" alt=""Wuji comment Picture" Kimchi hglt1967 work">
+                <p>hglt1967 | Photography</p>
+            </a>
+        </div>
+
+
+    </section>
+
+    <!-- footer -->
     <footer>
-        <p>&copy; 2024 Learning Resources</p>
+        <div class="footer-content">
+            <p>&copy; 2024 Photography World. All Rights Reserved.</p>
+            <p><a href="contact.html">Jingkun Yu</a> | <a href="contact.html">Contact us</a></p>
+        </div>
     </footer>
 </body>
 
