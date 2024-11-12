@@ -56,42 +56,26 @@
     </header>
 
     <!-- new products recommendation -->
-    <section class="carousel">
-        <input type="radio" name="carousel" id="slide1" checked>
-        <input type="radio" name="carousel" id="slide2">
-        <input type="radio" name="carousel" id="slide3">
-        <input type="radio" name="carousel" id="slide4">
-    
-
-        <div class="carousel-images">
-            <div class="slide" id="s1">
-                <img src="photo\other_photo\equipments\HASSELBLAD-907X.png" alt="HASSELBLAD-907X.png">
-            </div>
-            <div class="slide" id="s2">
-                <img src="photo\other_photo\equipments\HASSELBLAD-X2D.png" alt="HASSELBLAD-X2D.png">
-            </div>
-            <div class="slide" id="s3">
-                <img src="photo\other_photo\equipments\HASSELBLAD-XCD.png" alt="HASSELBLAD-XCD.png">
-            </div>
-            <div class="slide" id="s4">
-                <img src="photo\other_photo\equipments\HASSELELAB-X2D.100C.png" alt="HASSELELAB-X2D.100C.png">
-            </div>
+    <section class="slider">
+        <div class="slider-wrapper">
+            <img src="photo\other_photo\equipments\HASSELBLAD-907X.png" alt="" >
         </div>
-    
-        <div class="carousel-dots">
-            <label for="slide1" class="dot active"></label>
-            <label for="slide2" class="dot"></label>
-            <label for="slide3" class="dot"></label>
-            <label for="slide4" class="dot"></label>
+        <div class="slider-footer">
+            <ul class="slider-indicator">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="toggle">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
         </div>
     </section>
-<<<<<<< HEAD
-    <script>
-        
-    </script>
-=======
+    
+    <script src='js/slider.js'></script>
 
->>>>>>> f94ce0519fdcdea8fda9e05a5b2cf33993f88780
     <!-- personal-recommendation -->
     <div class="personal-recommendation">
         <a href="contact.html"><img src="photo\other_photo\equipments\equipment-recommendation.png" alt="personality recommendation"></a>

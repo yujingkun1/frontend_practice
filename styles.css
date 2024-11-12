@@ -978,110 +978,85 @@ h2 {
 /*equipments.html
 ---------------------------------------------------------------------------*/
 
-/* hero banner carousel */
-.carousel {
-    position: relative;
-    max-width:100%;
-    height: 80%;
-    margin: auto;
+/* hero banner slider */
+.slider{
+    width:100vw;
     overflow: hidden;
 }
 
-.carousel input {
-    display: none;
+.slider-wrapper {
+    width: 100%;
+    height: 70%;
 }
 
-.carousel-images {
-    display: flex;
-    transition: transform 0.5s ease;
-    height: 100%;
+.slider img{
+    width: 100%;
+    display: block;
 }
 
-.carousel h2 {
+.slider-footer {
+    height: 30%;
+    background-color: rgb(100, 67, 68);
+    padding: 12px 12px 12px 22px;
+    position: relative;
+}
+
+.slider-footer .toggle {
     position: absolute;
-    right: 10px;
-    top: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 30px;
-    font-weight: bold;
+    right: 0;
+    top: 12px;
+    display: flex;
 }
 
-.slide {
-    min-width: 100%;
-    height: 100%;
+.slider-footer .toggle button {
+    margin-right: 12px;
+    width: 28px;
+    height: 28px;
+    appearance: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.slider-footer .toggle button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.slider-indicator {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-.carousel-images img {
-    width: 100%;
-    height: 100%;
-    object-position: center;
-    object-fit: cover;
-}
-
-.carousel-dots {
-    z-index: 10;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    gap: 10px;
-    display: flex;
-    transform: translateX(-50%);
-    background-color: transparent;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    background-color: transparent;
+.slider-indicator li {
+    width: 8px;
+    height: 8px;
+    margin: 4px;
     border-radius: 50%;
+    background: #fff;
+    opacity: 0.4;
     cursor: pointer;
-    z-index: 10;
 }
 
-.dot.active {
-    background-color: #717171;
+.slider-indicator li.active {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
 }
 
-/* slide change effect */
-#slide1:checked~.carousel-images {
-    transform: translateX(0%);
-}
 
-#slide2:checked~.carousel-images {
-    transform: translateX(-100%);
-}
 
-#slide3:checked~.carousel-images {
-    transform: translateX(-200%);
-}
 
-#slide4:checked~.carousel-images {
-    transform: translateX(-300%);
-}
 
-/* update the state of dots */
-#slide1:checked~.carousel-dots .dot:nth-of-type(1),
-#slide2:checked~.carousel-dots .dot:nth-of-type(2),
-#slide3:checked~.carousel-dots .dot:nth-of-type(3),
-#slide4:checked~.carousel-dots .dot:nth-of-type(4) {
-    background-color: #717171;
-}
-
-.carousel-dots .dot {
-    background-color: #bbb;
-}
-
-.recommendation h2{
+/* personal recommendation */
+.recommendation h2 {
     text-align: center;
 }
 
-/* personal recommendation photo */
 .personal-recommendation {
     display: flex;
     justify-content: center;
