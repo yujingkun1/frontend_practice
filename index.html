@@ -13,44 +13,49 @@
           <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src = 'js/jQuery.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
-    <header class="hero-header">
-
-        <!-- navigation -->
-        <nav class="navbar">
-            <div class="logo">Photography World</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="learning.html">Learning</a></li>
-        
-                <!-- Equipments Dropdown -->
-                <li class="dropdown">
-                    <a href="equipments.html">Equipments</a>
-                    <ul class="dropdown-content">
-                        <li><a href="equipments.html">Cameras</a></li>
-                        <li><a href="equipments-lenses.html">Lenses</a></li>
-                        <li><a href="equipments-accessories.html">Accessories</a></li>
-                    </ul>
-                </li>
-        
-                <!-- Gallery Dropdown -->
-                <li class="dropdown">
-                    <a href="Gallery.html">Gallery</a>
-                    <ul class="dropdown-content">
-                        <li><a href="Gallery.html">People</a></li>
-                        <li><a href="environment.html">Environment</a></li>
-                        <li><a href="other.html">Other</a></li>
-                    </ul>
-                </li>
-        
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        
+    <!-- navigation -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Photography World</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="learning.html">Learning</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="equipments.html" role="button" data-bs-toggle="dropdown">Equipments</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="equipments.html">Cameras</a></li>
+                            <li><a class="dropdown-item" href="equipments-lenses.html">Lenses</a></li>
+                            <li><a class="dropdown-item" href="equipments-accessories.html">Accessories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="Gallery.html" role="button" data-bs-toggle="dropdown">Gallery</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Gallery.html">People</a></li>
+                            <li><a class="dropdown-item" href="environment.html">Environment</a></li>
+                            <li><a class="dropdown-item" href="other">Other</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
             <!-- Login Button -->
             <a href="login.html" class="cta">
                 <button class="login_button" aria-label="login button">
@@ -63,30 +68,32 @@
                     </svg>
                 </button>
             </a>
-        </nav>
+        </div> 
+    </nav>
 
-        
-        <!-- hero-content -->
-        <div class="hero-content">
-            <img src="photo\other_photo\herobackground.png" alt="Hero Image background">
-            <div class="text-overlay">
-                <div class="h1 hero-title">Capture Life's Moments</div>
-                <p>Your journey into the world of photography starts here. Learn, explore, and get inspired!</p>
-                <a href="learning.html" class="start-button">
-                    <button class="cssbuttons-io-button" aria-label="start_button">
-                    Get started
-                    <div class="icon">
-                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
-                                fill="currentColor"></path>
-                        </svg>
-                    </div>
-                </button>
-            </a>
-            </div>  
-        </div>
-    </header>
+    
+
+
+    <!-- hero-content -->
+    <div class="hero-content">
+        <img src="photo\other_photo\herobackground.png" alt="Hero Image background">
+        <div class="text-overlay">
+            <div class="h1 hero-title">Capture Life's Moments</div>
+            <p>Your journey into the world of photography starts here. Learn, explore, and get inspired!</p>
+            <a href="learning.html" class="start-button">
+                <button class="cssbuttons-io-button" aria-label="start_button">
+                Get started
+                <div class="icon">
+                    <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                            fill="currentColor"></path>
+                    </svg>
+                </div>
+            </button>
+        </a>
+        </div>  
+    </div>
 
 
     <!-- Daily-photography -->
