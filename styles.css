@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
     background-color: #f5f5f5;
     font-family: 'Arial', sans-serif;
+    font-size: 16px;
 }
 
 .subpage-header {
@@ -186,13 +187,15 @@ body {
     text-align: center;
 }
 
-.text-overlay h1{
-    font-size: 4rem;
+.text-overlay .hero-title{
+    font-size: 5rem;
     margin-bottom: 10px;
     background-color: transparent;
+    font-family: Arial;
+    font-weight: bold;
 }
 .text-overlay p {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 10px 0 20px 0;
     color: white;
     background-color: transparent;
@@ -252,107 +255,6 @@ body {
     transform: scale(0.95);
 }
 
-/* media about hero contact */
-/* for tablet device */
-@media (max-width: 768px) {
-    .hero-content {
-        height: 50vh;
-    }
-
-    .text-overlay h1 {
-        font-size: 2.5rem;
-    }
-
-    .text-overlay p {
-        font-size: 1.2rem;
-    }
-
-    .Daily-photography{
-        padding: 30px 0;
-        height: auto;
-    }
-
-    .Daily-photography h2{
-        margin-left: 5%;
-        font-size: 1.8rem;
-        padding: 30px 0;
-    }
-
-    .image-container {
-        flex-direction: column;
-        width: 90%;
-    }
-
-    .what-we-offer{
-        margin-top: 60px;
-    }
-
-    .image-container .box {
-        flex: 1 1 100%;
-        margin: 100px 0;
-    }
-
-
-    .what-we-offer {
-        margin: 200px auto;
-    }
-
-    .offer-container {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 200px;
-    }
-
-
-    .offer-item {
-        flex: 1 1 80%;
-        height: 250px;
-        margin: 10px 0;
-    }
-}
-
-/* for phone */
-@media (max-width: 480px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px;
-    }
-
-    .navbar .logo {
-        margin-bottom: 10px;
-    }
-
-    .nav-links li {
-        display: block;
-        padding: 5px 0;
-    }
-
-    .hero-content {
-        height: 40vh;
-    }
-
-    .text-overlay h1 {
-        font-size: 2rem;
-    }
-
-    .text-overlay p {
-        font-size: 1rem;
-    }
-
-    .image-container .box {
-        height: 200px;
-    }
-
-    .what-we-offer h2 {
-        margin-top: 300px;
-    }
-    .offer-item {
-        flex: 1 1 100%;
-        margin: 10px 0;
-    }
-}
-
 
 /* daily photography */
 .Daily-photography {
@@ -361,12 +263,13 @@ body {
     margin-top: 50px;
     position: relative;
 }
+
 .Daily-photography h2{
     align-self: flex-start;
     margin-left: 10vw;
     margin-top: 50px;
     margin-bottom: 50px;
-    font-size: 2.3rem;
+    font-size: 3rem;
     font-weight: bold;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: Black;
@@ -403,7 +306,7 @@ body {
 
 .image-container .box p {
     font: 200 45px;
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -443,7 +346,7 @@ body {
 }
 
 .what-we-offer h2 {
-    font-size: 2.3rem;
+    font-size: 3rem;
     margin-bottom: 50px;
     align-self: flex-start;
     margin-left: 10vw;
@@ -485,7 +388,7 @@ body {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     overflow: hidden;
@@ -516,7 +419,7 @@ body {
     right: 0;
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     padding: 10px;
     text-align: center;
     opacity: 0;
@@ -545,9 +448,10 @@ body {
 .news-section h2 {
     align-self: flex-start;
     margin-left: 10vw;
-    font-size: 2.3rem;
+    font-size: 3.5rem;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin-bottom: 5vh;
+    font-weight: bold;
 }
 
 .news-container {
@@ -579,7 +483,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
     margin-bottom: 30px;
 }
@@ -588,7 +492,7 @@ body {
     color: black;
     text-decoration: none;
     margin-right: auto;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 100%;
     display: inline-block;
@@ -629,7 +533,7 @@ body {
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin: 10px 5px;
 }
 
@@ -668,10 +572,12 @@ body {
     text-decoration: none;
     margin-bottom: 20px;
 }
-
+.photo-info span{
+    font-size: 1.3rem;
+}
 .horizontal-photo p {
     margin-top: 8px;
-    font-size: 16px;
+    font-size: 1.3rem;
     font-weight: bold;
     color: black;
     text-decoration: none !important;
@@ -832,13 +738,6 @@ h1 {
 h2 {
     font-size: 2rem;
 }
-/* media for small screen*/
-@media (max-width: 768px) {
-    .cover-item {
-        width: 100%;
-    }
-}
-
 
 
 
@@ -1202,18 +1101,7 @@ h2 {
     margin-top: 5px;
 }
 
-/* media for small screen */
-@media (max-width: 992px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
-@media (max-width: 600px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-}
 
 
 
@@ -1335,33 +1223,6 @@ body.contact-page {
 
 .contact-info a:hover {
     text-decoration: underline;
-}
-
-/* responsive design */
-@media screen and (max-width: 600px) {
-    .contact-form {
-        flex-direction: column;
-    }
-
-    .msg textarea {
-        height: 80px;
-    }
-
-    .input-fields,
-    .msg {
-        width: 100%;
-    }
-}
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
-
-    .triangle-container,
-    .brands-grid,
-    .photo-gallery {
-        flex-direction: column;
-    }
 }
 
 
@@ -1543,4 +1404,32 @@ footer {
 
 .footer-content a:hover {
     text-decoration: underline;
+}
+
+/* 小屏幕设备（手机） */
+@media (max-width: 768px) {
+    body {
+        font-size: 8px;
+    }
+}
+
+/* 中屏幕设备（平板） */
+@media (min-width: 769px) and (max-width: 992px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* 大屏幕设备（桌面） */
+@media (min-width: 993px) and (max-width: 1199px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* 超大屏幕设备（大屏显示器） */
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
 }
