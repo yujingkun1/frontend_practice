@@ -61,7 +61,7 @@ body {
 }
 
 .login_button>svg {
-    width: 34px;
+    width: 30px;
     margin-left: 10px;
     transition: transform 0.3s ease-in-out;
 }
@@ -71,8 +71,13 @@ body {
 }
 
 .login_button:active {
-    transform: scale(0.95);
+    transform: scale(0.90);
 } 
+
+.logbutton {
+    position: absolute;
+    right: 0;
+}
 
 
 
@@ -1340,6 +1345,50 @@ footer {
     body {
         font-size: 12px;
     }
+
+    /* nav button */
+    .login_button {
+        font-size: 11px;
+        padding: 6px 15px;
+    }
+
+    .login_button>svg {
+        width: 15px;
+        margin-left: 0;
+    }
+
+    .logbutton {
+            position: static;
+        }
+
+    /* index.html */
+    /* hero content */
+    .navbar-brand {
+        font-size: 20px;
+    }
+    .hero-content {
+        height: 45vh;
+    }
+    .text-overlay .hero-title {
+        font-size: 1.3rem;
+    }
+
+    .text-overlay p {
+        font-size: 0.6rem;
+    }
+    .cssbuttons-io-button {
+        font-size: 12px;
+        padding: 0.2em;
+        padding-left: 0.8em;
+        height: 2em;
+        padding-right: 2.3em;
+    }
+
+    .cssbuttons-io-button .icon {
+        height: 1.5em;
+        width: 1.5em;
+        right: 0.1em;
+    }
 }
 
 /* 中屏幕设备（平板） */
@@ -1347,12 +1396,57 @@ footer {
     body {
         font-size: 14px;
     }
+
+    /* navbar button*/
+    .login_button {
+        font-size: 13px;
+        padding: 9px 20px;
+    }
+
+    .login_button>svg {
+        width: 25px;
+        margin-left: 6px;
+    }
+
+    /* index.html */
+    /* hero content */
+    .navbar-brand {
+        font-size: 25px;
+    }
+    .hero-content {
+        height: 40vh;
+    }
+    .text-overlay .hero-title {
+        font-size: 2rem;
+    }
+    .text-overlay p {
+        font-size: 0.8rem;
+    }
+    .cssbuttons-io-button {
+        font-size: 14px;
+        padding: 0.25em;
+        padding-left: 1em;
+        height: 2.3em;
+        padding-right: 2.8em;
+    }
+
+    .cssbuttons-io-button .icon {
+        height: 1.8em;
+        width: 1.8em;
+        right: 0.2em;
+    }
 }
 
 /* 大屏幕设备（桌面） */
 @media (min-width: 993px) and (max-width: 1199px) {
     body {
         font-size: 16px;
+    }
+    .hero-content {
+        height: 70vh;
+    }
+    .text-overlay .hero-title {
+        font-size: 2.3rem;
     }
 }
 
