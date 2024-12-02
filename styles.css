@@ -575,7 +575,8 @@ a {
 /* learning introduction */
 .learning_hero {
     width: 100vw;
-    height: 70vh;
+    height: auto;
+    margin-bottom: 5vh;
 }
 
 .learning_hero img {
@@ -592,22 +593,25 @@ a {
 .learning_intro h1 {
     font-size: 60px;
     color: black;
+    font-weight: bold;
 }
 
 .learning_intro h3 {
     font-size: 40px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .learning_content {
     margin-top: 20px;
-    width: 60vw;
+    width: 70vw;
     font-size: 20px;
     text-align: center;
 }
 
 .elements_intro {
     width: 100vw;
-    height: 70vh;
+    height: auto;
     margin: 80px 0; 
     position: relative;
 }
@@ -712,8 +716,9 @@ p {
     text-align: center;
 }
 
-h1 {
+.more h1 {
     font-size: 4rem;
+    font-weight: bold;
 }
 
 h2 {
@@ -1065,6 +1070,7 @@ h2 {
 .accessories {
     height: 45vh;
 }
+
 .product-item img {
     width: 100%;
     height: 100%;
@@ -1080,7 +1086,8 @@ h2 {
     font-style: normal;
     color: #555;
     margin-top: 5px;
-}
+
+
 
 
 
@@ -1442,6 +1449,9 @@ footer {
         margin-left: 0;
         padding: 0 10%;
     }
+    .intro_start {
+        margin: 30px 0;
+    }
 
     /* change image to display vertical */
     .image-container .box {
@@ -1514,6 +1524,40 @@ footer {
     .photo-info span {
         font-size: 0.6rem;
     }
+
+    /* learning.html */
+
+    .learning_intro h1 {
+        font-size: 1.7rem;
+    }
+    .learning_intro h3 {
+        font-size: 1.2rem;
+    }
+    .learning_content {
+        width: 85vw;
+        margin-top: 10px;
+    }
+    .learning_content p{
+        font-size: 0.9rem;
+    }
+    .elements_intro {
+        margin: 10px 0;
+    }
+    .label {
+        font-size: 15px;
+    }
+    .intro_start {
+        margin: 40px 0;
+    }
+    .intro_start h1 {
+        font-size: 1.5rem;
+    }
+    .more h1 {
+        font-size: 2rem;
+    }
+    .more h2 {
+        font-size: 1.3rem;
+    }
 }
 
 /* 中屏幕设备（平板） */
@@ -1579,6 +1623,28 @@ footer {
     .photo-info span {
         font-size: 0.8rem;
     }
+    /* learning.html */
+    .learning_intro h1 {
+        font-size: 3rem;
+    }
+    .learning_intro h3 {
+        font-size: 2.1rem;
+    }
+    .learning_content p { 
+        font-size: 1.2rem;
+    }
+    .elements_intro {
+        margin: 20px 0;
+    }
+    .label {
+        font-size: 30px;
+    }
+    .intro_start h1 {
+        font-size: 2.5rem;
+    }
+    .more h1{
+        font-weight: 2.5rem;
+    }   
 }
 
 /* 大屏幕设备（桌面） */
@@ -1605,6 +1671,9 @@ footer {
 
     .what-we-offer h2 {
         font-size: 2rem;
+    }
+    .intro_start h1 {
+        font-size: 2.5rem;
     }
 }
 
