@@ -1,12 +1,18 @@
+
 const tx = document.querySelector('#comment');
 const commentList = document.querySelector('.comment-list');
+const submit = document.querySelector('.comment-btn')
 
-tx.addEventListener('keyup', function (e) {
-  if (e.key === 'Enter') {
-    if (tx.value.trim()) {
-      const newComment = document.createElement('div');
-      newComment.classList.add('comment-item');
-      newComment.innerHTML = `
+
+// The common function to add comment
+function addComment(event) {
+  // prevent the page refresh
+  if(event) event.preventDefault();
+  // prevent submitting empty contents
+  if (tx.value.trim()) {
+    const newComment = document.createElement('div');
+    newComment.classList.add('comment-item');
+    newComment.innerHTML = `
         <div class="info">
           <div class="name-line">
             <svg xmlns="http://www.w3.org/2000/svg" class="comment-avatar" height="40px" viewBox="0 -960 960 960" width="40px" fill="black">
@@ -16,10 +22,32 @@ tx.addEventListener('keyup', function (e) {
           </div>
           <p class="text">${tx.value.trim()}</p>
           <p class="time">${new Date().toLocaleString()}</p>
+          <button class="delete-btn">Delete</button>
         </div>
       `;
-      commentList.appendChild(newComment);
-      tx.value = '';
+    commentList.appendChild(newComment);
+    tx.value = '';
+
+    // Add event listener for delete button
+    const deleteBtn = newComment.querySelector('.delete-btn');
+    deleteBtn.addEventListener('click', function () {
+        newComment.remove(); // Remove the comment item
+    });
+  }
+}
+  
+
+
+// add comment if the enter up
+tx.addEventListener('keyup', function (e) {
+  if (e.key === 'Enter') {
+    addComment(e)
     }
   }
+);
+
+// add comment if the submit button is clicked
+submit.addEventListener('click', function (e) {
+  addComment(e);
 });
+
