@@ -22,10 +22,11 @@
 <body>
     <header>
         <!-- navigation -->
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-dark bg-body-tertiary navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Photography World</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <button class="navbar-toggler" aria-label="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -57,20 +58,17 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li>
+        
+                        <!-- Login Button -->
+                        <li class="nav-item logbutton">
+                            <a href="login.html" class="cta">
+                                <button class="login-button">
+                                    <span class="login-txt">Log in</span>
+                                </button>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <!-- Login Button -->
-                <a href="login.html" class="cta">
-                    <button class="login_button" aria-label="login button">
-                        <span>Login</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 74 74" height="34" width="34">
-                            <circle stroke-width="3" stroke="black" r="35.5" cy="37" cx="37"></circle>
-                            <path fill="black"
-                                d="M25 35.5C24.1716 35.5 23.5 36.1716 23.5 37C23.5 37.8284 24.1716 38.5 25 38.5V35.5ZM49.0607 38.0607C49.6464 37.4749 49.6464 36.5251 49.0607 35.9393L39.5147 26.3934C38.9289 25.8076 37.9792 25.8076 37.3934 26.3934C36.8076 26.9792 36.8076 27.9289 37.3934 28.5147L45.8787 37L37.3934 45.4853C36.8076 46.0711 36.8076 47.0208 37.3934 47.6066C37.9792 48.1924 38.9289 48.1924 39.5147 47.6066L49.0607 38.0607ZM25 38.5L48 38.5V35.5L25 35.5V38.5Z">
-                            </path>
-                        </svg>
-                    </button>
-                </a>
             </div>
         </nav>
     </header>
@@ -87,43 +85,33 @@
     <!-- category navigation -->
     <section class="category-nav">
         <div class="category-buttons">
-            <a href="Gallery.html" class="category-btn people">People</a>
-            <a href="environment.html" class="category-btn">Environment</a>
-            <a href="other.html" class="category-btn">Other</a>
+            <button class="category-btn" data-category="People">People</button>
+            <button class="category-btn" data-category="Environment">Environment</button>
+            <button class="category-btn" data-category="Other">Other</button>
         </div>
     </section>
 
     <!-- image flow -->
     <section class="imgflow">
         <div class="container">
-            <img src="photo\gallery_photo\people\img1.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img2.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img3.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img4.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img5.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img6.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img7.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img8.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img9.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img10.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img11.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img12.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img13.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img14.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img15.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img16.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img17.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img18.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img19.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img20.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img21.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img22.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img23.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img24.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img25.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img26.jpg" alt="photos">
-            <img src="photo\gallery_photo\people\img27.jpg" alt="photos">
+            
         </div>
+        <!-- Drag to upload photos -->
+        <div class="upload-section">
+            <div class="upload-area">
+                <p>Drag and drop an image here, or click to select.</p>
+                <input type="file" id="fileInput" accept="image/*" hidden />
+            </div>
+            <div class="upload-preview">
+                <p>Preview:</p>
+                <img id="previewImage" alt="Preview" />
+                <button id="submitButton">Submit</button>
+            </div>
+        </div>
+        
+        
+        <script src="js\gallery-nav.js"></script>
+        <script src="js\drag-upload.js"></script>
     </section>
     
     
