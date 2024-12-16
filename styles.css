@@ -146,7 +146,6 @@ body {
     font-size: 3.5rem;
     margin-bottom: 10px;
     background-color: transparent;
-    font-family: Arial;
     font-weight: bold;
 }
 .text-overlay p {
@@ -1144,13 +1143,15 @@ p {
 }
 
 /* product recommendation navigation */
-.page-container {
+.product-container {
     text-align: center;
     padding: 10px;
 }
 
-.page-container h1 {
+.product-container h1 {
     font-size: 3rem;
+    font-weight: bold;
+    font-family: 'DM Serif Text', sans-serif;
 }
 
 .product-nav {
@@ -1178,6 +1179,7 @@ p {
     color: #333;
     font-size: 18px;
     font-weight: 600;
+    font-family: 'DM Serif Text', sans-serif;
     padding-bottom: 5px;
     transition: color 0.3s;
 }
@@ -1215,6 +1217,7 @@ p {
     color: #333;
     font-weight: bold;
     text-transform: uppercase;
+    font-family: 'DM Serif Text', sans-serif;
 }
 
 
@@ -1224,30 +1227,18 @@ p {
 }
 
 
-.product-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 80px;
-}
 
 
 .product-item {
-    flex: 1;
-    max-width: 23%;
-    height: 28vh;
-    background-color: #f9f9f9;
-    padding: 30px;
+    background-color: #f5f5f5;
+    border: none;
     border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    margin-bottom: 30px;
 }
 
 .product-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .accessories {
@@ -1258,18 +1249,16 @@ p {
     width: 100%;
     height: 100%;
     vertical-align: middle;
-    border-radius: 8px;
-    margin-bottom: 80px;
 }
 
 .product-item p {
-    font-size: 16px;
-    font: Montserrat, sans-serif;
+    font-size: 1.1rem;
+    font-family: 'DM Serif Text', sans-serif;
     font-weight: 500;
     font-style: normal;
     color: #555;
     margin-top: 5px;
-}
+} */
 
 
 
@@ -1806,6 +1795,20 @@ footer {
     .more h2 {
         font-size: 1.3rem;
     }
+
+    /* equipmentt.html */
+    .product-container h1 {
+        font-size: 2rem;
+    }
+    .personal-recommendation {
+        margin-bottom: 0;
+    }
+    .personal-recommendation a {
+        width: 100%;
+    }
+    .section-title {
+        font-size: 22px;
+    }
 }
 
 /* 中屏幕设备（平板） */
@@ -1893,6 +1896,16 @@ footer {
     .more h1{
         font-weight: 2.5rem;
     }   
+    /* equipment.html */
+    .personal-recommendation a {
+        width: 70%;
+    }
+    .product-container h1 {
+        font-size: 2.3rem;
+    }
+    .section-title {
+        font-size: 25px;
+    }
 }
 
 /* 大屏幕设备（桌面） */
