@@ -705,6 +705,18 @@ p {
     color: #666;
 }
 
+/* video recommendation part */
+.video-title {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.video-subtitle {
+    font-size: 1.8rem;
+    font-family: 'DM Serif Text', sans-serif;
+    font-weight: bold;
+}
+
 
 .form-group {
     margin: 30px auto;
@@ -1809,6 +1821,10 @@ footer {
     .section-title {
         font-size: 22px;
     }
+    /* learning.html */
+    .video-title {
+        font-size: 1.4rem;
+    }
 }
 
 /* 中屏幕设备（平板） */
@@ -1906,6 +1922,10 @@ footer {
     .section-title {
         font-size: 25px;
     }
+    /* learning.html */
+    .video-title {
+        font-size: 1.7rem;
+    }
 }
 
 /* 大屏幕设备（桌面） */
@@ -1943,5 +1963,4 @@ footer {
     body {
         font-size: 18px;
     }
-}
 }
