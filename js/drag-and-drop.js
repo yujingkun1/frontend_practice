@@ -1,4 +1,4 @@
-// 为图片添加拖拽事件处理程序
+// drag and drop.js
 function addDragAndDropHandlers() {
     const images = document.querySelectorAll(".draggable-image");
 
@@ -15,6 +15,7 @@ let draggedImage = null; // 保存当前拖拽的图片
 function handleDragStart(event) {
     draggedImage = event.target; // 保存拖拽的图片
     event.dataTransfer.effectAllowed = "move";
+    event.dataTransfer.setData("text/plain", ""); // 必须设置数据，阻止默认行为
     event.target.classList.add("dragging");
 }
 

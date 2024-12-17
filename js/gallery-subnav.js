@@ -86,75 +86,59 @@ const imageData = {
     ],
 }
 
-// get elements
 const categoryButtons = document.querySelectorAll(".category-btn");
 const container = document.querySelector(".container");
-const defaultCategory = "People"
+const defaultCategory = "People"; // 默认分类
 
-// Function to load images dynamically
+// 加载图片的函数
 function loadImages(category) {
-    // Clear existing images
-    container.innerHTML = "";
+    container.innerHTML = ""; // 清空已有图片
 
-    // Load new images
     if (imageData[category]) {
         imageData[category].forEach(src => {
             const img = document.createElement("img");
             img.src = src;
             img.alt = `${category} photo`;
 
-            // Set photo to be draggable
-            img.classList.add("draggable-image");
+            img.classList.add("draggable-image"); // 使图片可拖动
             img.setAttribute("draggable", "true");
             container.appendChild(img);
         });
-
-        addDragAndDropHandlers();
     } else {
         container.innerHTML = "<p>No images available for this category.</p>";
     }
+
+    // 重新绑定拖拽事件
+    addDragAndDropHandlers();
 }
 
+// 设置活动按钮的样式
+function setActiveButton(activeButton) {
+    categoryButtons.forEach(button => button.classList.remove("active")); // 清除所有按钮的活动样式
+    if (activeButton) {
+        activeButton.classList.add("active"); // 为当前按钮添加活动样式
+    }
+}
 
-
-// Add event listeners to category buttons
+// 点击分类按钮事件
 categoryButtons.forEach(button => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+        event.preventDefault();
         const category = button.getAttribute("data-category");
         loadImages(category);
-        setActiveButton(button);
+        setActiveButton(button); // 设置当前按钮为 active
+        history.pushState(null, "", `Gallery.html?category=${category}`); // 更新 URL
     });
 });
 
-// Load the default category on page load
+// 页面加载时默认加载分类
 document.addEventListener("DOMContentLoaded", () => {
-    const initialImages = imageData[defaultCategory];
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryFromUrl = urlParams.get("category") || defaultCategory; // 获取 URL 中的 category 参数
 
-    if (initialImages) {
-        initialImages.forEach(src => {
-            const img = document.createElement("img");
-            img.src = src;
-            img.alt = `${defaultCategory} photo`;
+    loadImages(categoryFromUrl); // 加载图片
 
-            // Let the initial image to be dragged
-            img.classList.add("draggable-image");
-            img.setAttribute("draggable", "true");
-            container.appendChild(img);
-        });
-
-        addDragAndDropHandlers()
-    }
-
-    const defaultButton = document.querySelector(`[data-category="${defaultCategory}"]`);
-    if (defaultButton) {
-        setActiveButton(defaultButton);
-    }
+    // 设置默认按钮为 active
+    const defaultButton = document.querySelector(`.category-btn[data-category="${categoryFromUrl}"]`);
+    setActiveButton(defaultButton);
 });
-
-
-
-
-
-
-
-

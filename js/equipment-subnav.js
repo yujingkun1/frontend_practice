@@ -89,15 +89,10 @@ function loadProducts(category) {
     // 将 Entry-Level 产品插入到标题后
     productContainer.insertBefore(entryRow, sectionTitleFlagship);
 
-    // 渲染 Flagship 产品
-    const flagshipRow = document.createElement("div");
-    flagshipRow.className = "row gx-4";
-    if (data.flagship.length === 0) {
-        const emptyMessage = document.createElement("p");
-        emptyMessage.className = "text-muted";
-        emptyMessage.textContent = "No flagship products available.";
-        flagshipRow.appendChild(emptyMessage);
-    } else {
+    // 仅渲染 Flagship 产品，如果有数据
+    if (data.flagship.length > 0) {
+        const flagshipRow = document.createElement("div");
+        flagshipRow.className = "row gx-4";
         data.flagship.forEach((product) => {
             const col = document.createElement("div");
             col.className = "col-md-3 mb-4";
@@ -112,10 +107,13 @@ function loadProducts(category) {
             `;
             flagshipRow.appendChild(col);
         });
-    }
 
-    // 将 Flagship 产品插入到 Flagship 标题后
-    productContainer.appendChild(flagshipRow);
+        // 将 Flagship 产品插入到 Flagship 标题后
+        productContainer.appendChild(flagshipRow);
+    } else {
+        // 如果没有 Flagship 产品，移除标题
+        sectionTitleFlagship.style.display = 'none';
+    }
 }
 
 // 页内导航点击事件
