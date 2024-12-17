@@ -42,9 +42,9 @@
                             <a class="nav-link dropdown-toggle" href="equipments.html" role="button"
                                 data-bs-toggle="dropdown">Equipments</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="equipments.html">Cameras</a></li>
-                                <li><a class="dropdown-item" href="equipments-lenses.html">Lenses</a></li>
-                                <li><a class="dropdown-item" href="equipments-accessories.html">Accessories</a></li>
+                                <li><a class="dropdown-item" href="equipments.html?category=Cameras">Cameras</a></li>
+                                <li><a class="dropdown-item" href="equipments.html?category=Lenses">Lenses</a></li>
+                                <li><a class="dropdown-item" href="equipments.html?category=Accessories">Accessories</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -93,7 +93,7 @@
         </div>
     </section>
     
-    <script src='js/slider.js'></script>
+ 
 
     <!-- personal-recommendation -->
     <div class="personal-recommendation">
@@ -105,16 +105,16 @@
         <h1>Product Recommendations</h1>
         <div class="product-nav">
             <ul class="product-nav-links">
-                <li class="product-nav-item active"><a href="equipments.html">Cameras</a></li>
-                <li class="product-nav-item"><a href="equipments-lenses.html">Lenses</a></li>
-                <li class="product-nav-item"><a href="equipments-accessories.html">Accessories</a></li>
+                <li class="product-nav-item active"><a href="equipments.html?category=Cameras">Cameras</a></li>
+                <li class="product-nav-item"><a href="equipments.html?category=Lenses">Lenses</a></li>
+                <li class="product-nav-item"><a href="equipments.html?category=Accessories">Accessories</a></li>
             </ul>
         </div>
     
         <!-- Entry-Level Products -->
         <div class="product-section">
             <div class="container mb-5">
-                <h2 class="section-title">Entry-Level Products</h2>
+                <h2 class="section-title entry-title">Entry-Level Products</h2>
                 <div class="row gx-4">
                     <div class="col-md-3 mb-4">
                         <div class="card product-item">
@@ -197,13 +197,6 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
     <!-- footer -->
     <footer>
         <div class="footer-content">
@@ -211,7 +204,9 @@
             <p><a href="contact.html">Jingkun Yu</a> | <a href="contact.html">Contact us</a></p>
         </div>
     </footer>
-    <script src="js\nav-category.js"></script>
+    <script src="js\main-nav.js"></script>
+    <script src='js/slider.js'></script>
+    <script src="js\equipment-subnav.js"></script>
 </body>
 
 </html>

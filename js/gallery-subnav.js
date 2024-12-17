@@ -115,13 +115,7 @@ function loadImages(category) {
     }
 }
 
-// Function to handle button active state
-function setActiveButton(button) {
-    // Remove 'active' class from all buttons
-    categoryButtons.forEach(btn => btn.classList.remove("active"));
-    // Add 'active' class to the clicked button
-    button.classList.add("active");
-}
+
 
 // Add event listeners to category buttons
 categoryButtons.forEach(button => {
@@ -162,48 +156,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// Let photo to be draggable
-function addDragAndDropHandlers() {
-    const images = document.querySelectorAll(".draggable-image");
 
-    images.forEach(img => {
-        img.addEventListener("dragstart", handleDragStart);
-        img.addEventListener("dragover", handleDragOver);
-        img.addEventListener("drop", handleDrop);
-        img.addEventListener("dragend", handleDragEnd);
-    });
-}
-
-let draggedImage = null;
-
-function handleDragStart(event) {
-    draggedImage = event.target; // 保存当前拖拽的图片
-    event.dataTransfer.effectAllowed = "move";
-    event.target.classList.add("dragging");
-}
-
-function handleDragOver(event) {
-    event.preventDefault(); // 阻止浏览器默认行为（如打开图片）
-    const target = event.target;
-
-    if (target && target !== draggedImage && target.classList.contains("draggable-image")) {
-        const rect = target.getBoundingClientRect();
-        const middleY = rect.top + rect.height / 2;
-        if (event.clientY < middleY) {
-            target.parentNode.insertBefore(draggedImage, target); // 拖拽到目标图片之前
-        } else {
-            target.parentNode.insertBefore(draggedImage, target.nextSibling); // 拖拽到目标图片之后
-        }
-    }
-}
-
-function handleDrop(event) {
-    event.preventDefault(); // 阻止浏览器默认行为
-    event.stopPropagation(); // 阻止事件冒泡
-}
-
-function handleDragEnd(event) {
-    event.target.classList.remove("dragging");
-    draggedImage = null; // 清空拖拽状态
-}
 
