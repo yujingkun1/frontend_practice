@@ -18,6 +18,7 @@ function setActiveButton(activeButton) {
 
 // 加载内容并设置按钮状态
 function loadContentByURLParameter(pageType) {
+    const defaultCategory = "People"
     const category = getURLParameter("category") || defaultCategory;
 
     if (pageType === "gallery") {
