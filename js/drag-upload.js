@@ -41,7 +41,11 @@ fileInput.addEventListener("change", (e) => {
 
 // 处理文件函数
 function handleFile(file) {
-    if (file && file.type.startsWith("image/")) {
+    // 支持的文件类型
+    const allowedFileTypes = ["image/jpeg", "image/png", "image/gif", "image/webp"];
+
+    // 检查文件类型是否符合要求
+    if (file && allowedFileTypes.includes(file.type)) {
         const reader = new FileReader();
         reader.onload = (e) => {
             uploadedImageSrc = e.target.result; // 保存图片数据
@@ -50,9 +54,10 @@ function handleFile(file) {
         };
         reader.readAsDataURL(file);
     } else {
-        alert("Please upload a valid image file.");
+        alert("Please upload a valid image file (JPG, PNG, GIF, or WebP).");
     }
 }
+
 
 // 提交图片
 submitButton.addEventListener("click", () => {

@@ -52,6 +52,29 @@ function setupDropdownNavigation() {
     });
 }
 
+// 检查登录状态并更新导航栏
+window.onload = () => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const logButton = document.querySelector('.logbutton');
+
+    if (isLoggedIn) {
+        logButton.innerHTML = `
+            <button class="login-button">
+                <span class="login-txt">Log out</span>
+            </button>
+        `;
+
+        // 登出逻辑
+        const logoutButton = document.querySelector('.login-button');
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('loggedInUser');
+            window.location.reload(); // 刷新页面
+        });
+    }
+};
+
+
 // 页面加载完成时初始化逻辑
 document.addEventListener("DOMContentLoaded", () => {
     const currentPage = window.location.pathname.includes("Gallery.html")
@@ -66,3 +89,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setupDropdownNavigation();
 });
+

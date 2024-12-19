@@ -732,7 +732,7 @@ p {
     display: flex;
     justify-content: center;
 }
-.comment-input {
+.comment-input, .reply-input {
     margin: 20px 10px;
     width: 40vw;
     background-color: #f5f5f5;
@@ -742,14 +742,14 @@ p {
     border-bottom: 2px solid #000;
     border-radius: 0;
 }
-.comment-input:focus {
+.comment-input:focus, .reply-input:focus {
     outline: none;
 }
 
 
 
 
-.comment-btn {
+.comment-btn, .submit-reply-btn {
     font-size: 18px;
     color: #000;
     font-family: inherit;
@@ -764,17 +764,21 @@ p {
     transition-property: color;
 }
 
-
-.comment-btn:focus:after,
-.comment-btn:hover:after {
+.submit-reply-btn {
+    font-size: 15px;
+}
+.comment-btn:hover:after,
+.submit-reply-btn:hover:after {
     width: 100%;
     left: 0%;
 }
-.comment-btn:focus {
+.comment-btn:focus,
+.submit-reply-btn:focus {
     outline: none;
 }
 
-.comment-btn:after {
+.comment-btn:after,
+.submit-reply-btn:after {
     content: "";
     outline: none;
     pointer-events: none;
@@ -815,11 +819,15 @@ p {
     display: flex;
     align-items: center;
 }
-.comment-list .comment-item .name {
+.comment-list .comment-item .name, .reply-username {
     color: #FB7299;
     font-size: 20px;
     font-weight: bold;
     margin-left: 10px;
+}
+
+.reply-username {
+    margin-left: 20px;
 }
 
 .comment-list .comment-item .text {
@@ -836,6 +844,43 @@ p {
     background-color: #f5f5f5;
     border: none;
     font-size: 15px;
+}
+
+.reply-btn, .like-btn {
+    all: unset;
+    cursor: pointer;
+    color: #555;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+
+.like-btn {
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.like-btn.liked {
+    color: #ff5722;
+}
+.liked svg {
+    fill: red;
+}
+
+.delete-btn {
+    margin-left: 10px;
+    cursor: pointer;
+}
+.delete-reply-btn {
+    all: unset;
+    font-size: 13px;
+    color: black;
+}
+
+.like-btn i {
+    font-size: 16px;
 }
 
 .more {
@@ -1374,6 +1419,7 @@ body.contact-page {
     display: block;
     color: #fff;
     padding: 10px 20px;
+    text-align: center;
     border: 2px solid #666;
     cursor: pointer;
     font-size: 16px;
@@ -1825,6 +1871,22 @@ footer {
     .video-title {
         font-size: 1.4rem;
     }
+    /*contact.html*/
+    .contact-section .btn {
+        font-size: 10px;
+        padding: 10px 0px;
+    }
+    .newsletter-section .newsletter-form .btn {
+        font-size: 10px;
+        padding: 10px 0;
+    }
+    /* gallery.html */
+    .search-container h2 {
+        font-size: 3rem;
+    }
+    .search-bar {
+        width: 300px;
+    }
 }
 
 /* 中屏幕设备（平板） */
@@ -1925,6 +1987,20 @@ footer {
     /* learning.html */
     .video-title {
         font-size: 1.7rem;
+    }
+
+    /*contact.html*/
+    .contact-section .btn {
+        font-size: 14px;
+        padding: 10px 0px;
+    }
+    .newsletter-section .newsletter-form .btn {
+        font-size: 14px;
+        padding: 10px 0px;
+    }
+    /* gallery.html */
+    .search-container h2 {
+        font-size: 3.5rem;
     }
 }
 

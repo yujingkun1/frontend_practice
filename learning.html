@@ -15,6 +15,8 @@
     <![endif]-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <script src='js/jQuery.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -202,7 +204,7 @@
         <div class="row">
             <!-- video 1 -->
             <div class="col-md-7">
-                <video controls class="w-100">
+                <video controls class="w-100" preload="metadata">
                     <source src="video\How to become a better photographer through 'visual exercise' [gGngRlWHmZw].f248.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
@@ -220,7 +222,7 @@
         <div class="row">
             <!-- video 2 -->
             <div class="col-md-7">
-                <video controls class="w-100">
+                <video controls class="w-100" preload="metadata">
                     <source src="video\I Shot 100,000 Portraits： Here's What I Learned... [qZUWdu2PnXg].f313.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
@@ -238,7 +240,7 @@
         <div class="row">
             <!-- video 3 -->
             <div class="col-md-7">
-                <video controls class="w-100">
+                <video controls class="w-100" preload="metadata">
                     <source src="video\PHOTOGRAPHY BASICS in 10 MINUTES [V7z7BAZdt2M].f616.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -293,7 +295,29 @@
                             </div>
                             <p class="text">It is useful for me to learn Photography</p>
                             <p class="time">2024-12-10 20:29:21</p>
+                            <div class="actions">
+                                
+                                <button class="like-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                                        <path
+                                            d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z" />
+                                    </svg>
+                                    <span class="like-count">6</span>
+                                </button>
+
+                                <button class="reply-btn" aria-label="reply">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                                        <path
+                                            d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="replies">
+                            </div>
                         </div>
+                            
+                        
+
                     </div>
                     <div class="comment-item ">
                         <div class="info">
@@ -307,7 +331,26 @@
                             </div>
                             <p class="text">It will be better if adding some common parameters of iso, aperture and shutter speed</p>
                             <p class="time">2024-11-10 20:29:21</p>
-                        </div>
+                            <div class="actions">
+                            
+                                <button class="like-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                                        <path
+                                            d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z" />
+                                    </svg>
+                                    <span class="like-count">314</span>
+                                </button>
+                            
+                                <button class="reply-btn" aria-label="reply">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                                        <path
+                                            d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+                                    </svg>
+                
+                                </button>
+                            </div>
+                            <div class="replies"></div>
+                        </div>   
                     </div>
                     <div class="comment-item ">
                         <div class="info">
@@ -321,10 +364,30 @@
                             </div>
                             <p class="text">Excellent tutorial! Hopping for more contents added!</p>
                             <p class="time">2024-11-30 20:29:21</p>
+                            <div class="actions">
+                            
+                                <button class="like-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                                        <path
+                                            d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z" />
+                                    </svg>
+                                    <span class="like-count">81</span>
+                                </button>
+                            
+                                <button class="reply-btn" aria-label="reply">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                                        <path
+                                            d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="replies"></div>
                         </div>    
+                        
                     </div>
                 </div>
             </div>
+        <div>
     </div>
     
 

@@ -1,53 +1,202 @@
-
 const tx = document.querySelector('#comment');
 const commentList = document.querySelector('.comment-list');
-const submit = document.querySelector('.comment-btn')
+const submit = document.querySelector('.comment-btn');
 
+// Add comment if the submit button is clicked
+submit.addEventListener('click', function (e) {
+    addComment(e);
+});
 
-// The common function to add comment
+// Add comment function with login check
 function addComment(event) {
-  // prevent the page refresh
-  if(event) event.preventDefault();
-  // prevent submitting empty contents
+  if (event) event.preventDefault();
+
+  // Check if user is logged in
+  const username = localStorage.getItem('loggedInUser') || 'Guest';
+
+  // Prevent submitting empty contents
   if (tx.value.trim()) {
     const newComment = document.createElement('div');
     newComment.classList.add('comment-item');
     newComment.innerHTML = `
-        <div class="info">
-          <div class="name-line">
-            <svg xmlns="http://www.w3.org/2000/svg" class="comment-avatar" height="40px" viewBox="0 -960 960 960" width="40px" fill="black">
-              <path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z" />
+    <div class="info">
+        <div class="name-line">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle"
+                                viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
             </svg>
-            <p class="name">Anonymous</p>
-          </div>
-          <p class="text">${tx.value.trim()}</p>
-          <p class="time">${new Date().toLocaleString()}</p>
-          <button class="delete-btn">Delete</button>
+            <p class="name">${username}</p>
+            
         </div>
-      `;
+        <p class="text">${tx.value.trim()}</p>
+        <p class="time">${new Date().toLocaleString()}</p>
+        <div class="actions">
+                                
+            <button class="like-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                    <path
+                        d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z" />
+                </svg>
+                <span class="like-count">0</span>
+            </button>
+
+            <button class="reply-btn" aria-label="reply">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black">
+                    <path
+                        d="M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Zm126-240h594v-480H160v525l46-45Zm-46 0v-480 480Z" />
+                </svg>
+            </button>
+            ${username !== 'Guest' ? `
+            <button class="delete-btn">Delete</button>
+            ` : ''} 
+        </div>
+        <div class="replies"></div>
+    </div>
+    `;
     commentList.appendChild(newComment);
     tx.value = '';
 
-    // Add event listener for delete button
-    const deleteBtn = newComment.querySelector('.delete-btn');
+    attachReplyFunctionality(newComment);
+    attachLikeFunctionality(newComment);
+    if (username !== 'Guest') {
+        attachDeleteFunctionality(newComment); // Only attach delete functionality for logged-in users
+    }
+  }
+}
+
+// Attach reply functionality
+function attachReplyFunctionality(commentItem) {
+  const replyBtn = commentItem.querySelector('.reply-btn');
+  const repliesContainer = commentItem.querySelector('.replies');
+
+  let replyInputVisible = false;
+  replyBtn.addEventListener('click', function () {
+    if (!replyInputVisible) {
+        const replyInput = document.createElement('div');
+        replyInput.classList.add('reply-input-container');
+        replyInput.innerHTML = `
+        
+        <div class="submit-row">
+            <span class="d-inline-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle"
+                                viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg>
+            <textarea class="reply-input" placeholder="Type your reply here..." rows="1"></textarea>
+            <button class="submit-reply-btn">Submit</button>
+            </span>
+        </div>
+        
+        `;
+        repliesContainer.appendChild(replyInput);
+
+        const submitReplyBtn = replyInput.querySelector('.submit-reply-btn');
+        const replyInputField = replyInput.querySelector('.reply-input');
+
+        submitReplyBtn.addEventListener('click', function () {
+            if (replyInputField.value.trim()) {
+                const username = localStorage.getItem('loggedInUser') || 'Guest';
+                const newReply = document.createElement('div');
+                newReply.classList.add('reply-item');
+                newReply.innerHTML = `
+                    <div class="name-line">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle"
+                                        viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                        <p class="reply-username">${username}</p>   
+                    </div>
+                    <p class="reply-text">${replyInputField.value.trim()}</p>
+                    <p class="reply-time">${new Date().toLocaleString()}</p>
+                    ${username !== 'Guest' ? `<button class="delete-reply-btn">Delete</button>` : ''}
+                `;
+                repliesContainer.appendChild(newReply);
+                replyInput.remove();
+                replyInputVisible = false;
+                // Attach delete functionality for the new reply
+                if (username !== 'Guest') {
+                    attachDeleteReplyFunctionality(newReply);
+                }             
+            }
+        });
+      replyInputVisible = true;
+    } else {
+      repliesContainer.querySelector('.reply-input-container').remove();
+      replyInputVisible = false;
+    }
+  });
+}
+
+// Attach like functionality
+function attachLikeFunctionality(commentItem) {
+  const likeBtn = commentItem.querySelector('.like-btn');
+  const likeCount = commentItem.querySelector('.like-count');
+
+  let liked = false;
+  likeBtn.addEventListener('click', function () {
+    liked = !liked;
+    if (liked) {
+      likeCount.textContent = parseInt(likeCount.textContent) + 1;
+      likeBtn.classList.add('liked');
+    } else {
+      likeCount.textContent = parseInt(likeCount.textContent) - 1;
+      likeBtn.classList.remove('liked');
+    }
+  });
+}
+
+// Attach delete functionality
+function attachDeleteFunctionality(commentItem) {
+  const deleteBtn = commentItem.querySelector('.delete-btn');
+  const username = localStorage.getItem('loggedInUser') || 'Guest';
+
+  if (deleteBtn) {
     deleteBtn.addEventListener('click', function () {
-        newComment.remove(); // Remove the comment item
+      const commentUsername = commentItem.querySelector('.name').textContent;
+      if (commentUsername === username || username === 'Admin') {
+        commentItem.remove();
+      } else {
+        alert('You can only delete your own comments.');
+      }
     });
   }
 }
-  
 
+// Attach delete functionality for replies
+function attachDeleteReplyFunctionality(replyItem) {
+  const deleteReplyBtn = replyItem.querySelector('.delete-reply-btn');
+  const username = localStorage.getItem('loggedInUser') || 'Guest';
 
-// add comment if the enter up
-tx.addEventListener('keyup', function (e) {
-  if (e.key === 'Enter') {
-    addComment(e)
-    }
+  if (deleteReplyBtn) {
+    deleteReplyBtn.addEventListener('click', function () {
+      const replyUsername = replyItem.querySelector('.reply-username').textContent;
+      if (replyUsername === username || username === 'Admin') {
+        replyItem.remove();
+      } else {
+        alert('You can only delete your own replies.');
+      }
+    });
   }
-);
+}
 
-// add comment if the submit button is clicked
-submit.addEventListener('click', function (e) {
-  addComment(e);
+// Initialize existing comments
+document.querySelectorAll('.comment-item').forEach(commentItem => {
+    attachReplyFunctionality(commentItem);
+    attachLikeFunctionality(commentItem);
+    attachDeleteFunctionality(commentItem);
+});
+
+
+// Add comment if the enter key is pressed
+tx.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+        addComment(e);
+    }
 });
 

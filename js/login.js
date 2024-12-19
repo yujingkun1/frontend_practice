@@ -25,6 +25,9 @@ function decryptPassword(encryptedPassword, key) {
     return decrypted;
 }
 
+function loginAlert() {
+    alert('success')
+}
 // Load saved email on page load
 window.onload = () => {
     const savedEmail = localStorage.getItem('savedEmail');
@@ -40,11 +43,12 @@ togglePassword.addEventListener('click', () => {
     passwordInput.type = type;
 });
 
-// Handle Sign In button click
+
 signInButton.addEventListener('click', () => {
+    event.preventDefault();
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
-    const encryptionKey = 5;  // 可以选择任意偏移量
+    const encryptionKey = 5; // 密码加密偏移量
 
     if (!email || !password) {
         alert('Please enter both email and password.');
@@ -57,15 +61,16 @@ signInButton.addEventListener('click', () => {
     if (!savedEmail || !encryptedPassword) {
         alert('Please register first.');
     } else if (email === savedEmail) {
-        // 解密存储的密码
         const decryptedPassword = decryptPassword(encryptedPassword, encryptionKey);
-
-        // 比较解密后的密码和用户输入的密码
+        console.log('Decrypted Password:', decryptedPassword);
         if (password === decryptedPassword) {
-            alert('Login successful!');
+            
+            localStorage.setItem('isLoggedIn', 'true'); // 设置登录状态
+            localStorage.setItem('loggedInUser', email); // 保存用户名
+            alert('Login successful');
             setTimeout(() => {
-                window.location.href = 'index.html';
-            }, 2000);
+                window.location.href = 'index.html';  // 跳转到主页
+            }, 1000);
         } else {
             alert('Incorrect password.');
         }
@@ -73,13 +78,14 @@ signInButton.addEventListener('click', () => {
         alert('Email not found. Please register first.');
     }
 
-    // 如果勾选了“记住我”，保存邮箱
     if (rememberMeCheckbox.checked) {
         localStorage.setItem('savedEmail', email);
     } else {
         localStorage.removeItem('savedEmail');
     }
 });
+
+
 
 // Handle Sign Up link click
 signUpLink.addEventListener('click', () => {
